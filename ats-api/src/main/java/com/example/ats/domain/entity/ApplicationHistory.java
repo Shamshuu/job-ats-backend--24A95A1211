@@ -1,4 +1,4 @@
-package main.java.com.example.ats.domain.entity;
+package com.example.ats.domain.entity;
 
 import com.example.ats.domain.enums.ApplicationStage;
 import jakarta.persistence.*;
@@ -37,4 +37,9 @@ public class ApplicationHistory {
 
     @Column(nullable = false, updatable = false)
     private Instant changedAt;
+
+    @PrePersist
+    void onCreate() {
+        this.changedAt = Instant.now();
+    }
 }

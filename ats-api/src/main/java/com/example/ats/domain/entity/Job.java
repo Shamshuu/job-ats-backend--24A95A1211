@@ -1,4 +1,4 @@
-package main.java.com.example.ats.domain.entity;
+package com.example.ats.domain.entity;
 
 import com.example.ats.domain.enums.JobStatus;
 import jakarta.persistence.*;

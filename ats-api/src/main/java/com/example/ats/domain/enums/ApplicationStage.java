@@ -1,4 +1,4 @@
-package main.java.com.example.ats.domain.enums;
+package com.example.ats.domain.enums;
 
 public enum ApplicationStage {
 
@@ -7,6 +7,6 @@ public enum ApplicationStage {
     INTERVIEW,
     OFFER,
     HIRED,
-    REJECTED;
+    REJECTED
 
 }

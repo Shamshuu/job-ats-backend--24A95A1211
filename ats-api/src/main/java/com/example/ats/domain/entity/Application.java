@@ -1,4 +1,4 @@
-package main.java.com.example.ats.domain.entity;
+package com.example.ats.domain.entity;
 
 import com.example.ats.domain.enums.ApplicationStage;
 import jakarta.persistence.*;
@@ -36,4 +36,10 @@ public class Application {
 
     @Column(nullable = false, updatable = false)
     private Instant appliedAt;
+
+    @PrePersist
+    void onCreate() {
+        this.appliedAt = Instant.now();
+        this.stage = ApplicationStage.APPLIED;
+    }
 }
