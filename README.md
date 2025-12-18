@@ -88,6 +88,18 @@ http://localhost:8081
 
 ---
 
+## Authentication
+
+The project uses **HTTP Basic Authentication**.
+
+### Test User (Already Present in DB)
+```
+Username: test@example.com
+Password: password123
+```
+
+---
+
 ## 🐘 Database Access
 
 ```bash
