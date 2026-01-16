@@ -9,6 +9,10 @@ import org.springframework.security.authentication.UsernamePasswordAuthenticatio
 import org.springframework.security.core.Authentication;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.web.bind.annotation.*;
+import jakarta.validation.Valid;
+import jakarta.validation.constraints.Email;
+import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.Size;
 
 @RestController
 @RequestMapping("/api/auth")
@@ -30,7 +34,7 @@ public class AuthController {
 
     @PostMapping("/register")
     @ResponseStatus(HttpStatus.CREATED)
-    public void register(@RequestBody RegisterRequest request) {
+    public void register(@RequestBody @Valid RegisterRequest request) {
 
         User user = User.builder()
                 .name(request.name())
@@ -56,8 +60,13 @@ public class AuthController {
     }
 
     public record RegisterRequest(
+            @NotBlank(message = "Name is required")
             String name,
+            @NotBlank(message = "Email is required")
+            @Email(message = "Invalid email format")
             String email,
+            @NotBlank(message = "Password is required")
+            @Size(min = 8, message = "Password must be at least 8 characters")
             String password
     ) {}
 

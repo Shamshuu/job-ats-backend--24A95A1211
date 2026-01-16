@@ -31,3 +31,35 @@ build/
 
 ### VS Code ###
 .vscode/
+
+# Ignore environment files
+.env
+.env.*
+
+# Ignore log files
+*.log
+
+# Ignore OS-specific files
+.DS_Store
+Thumbs.db
+
+# Ignore Maven and Gradle wrappers
+.mvn/
+.gradle/
+
+# Ignore generated files
+*.class
+*.jar
+*.war
+*.ear
+
+# Ignore backup and temp files
+*~
+*.swp
+*.bak
+
+# Allow source code and configs
+!src/**
+!README.md
+!docker-compose.yml
+!application.yml

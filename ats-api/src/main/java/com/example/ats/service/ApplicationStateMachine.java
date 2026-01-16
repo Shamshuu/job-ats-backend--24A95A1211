@@ -78,4 +78,8 @@ public class ApplicationStateMachine {
             );
         }
     }
+
+    public boolean isValidTransition(ApplicationStage from, ApplicationStage to) {
+        return canTransition(from, to);
+    }
 }
